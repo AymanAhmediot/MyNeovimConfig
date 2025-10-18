@@ -1,36 +1,57 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "catppuccin/nvim",
     priority = 1000 ,
-    config = true,
+--    config = true,
     lazy = false,
     config = function()
-        -- Default options:
-        require("gruvbox").setup({
-          terminal_colors = true, -- add neovim terminal colors
-          undercurl = true,
-          underline = true,
-          bold = true,
-          italic = {
-            strings = true,
-            emphasis = true,
-            comments = true,
-            operators = false,
-            folds = true,
-          },
-          strikethrough = true,
-          invert_selection = false,
-          invert_signs = false,
-          invert_tabline = false,
-          inverse = true, -- invert background for search, diffs, statuslines and errors
-          contrast = "", -- can be "hard", "soft" or empty string
-          palette_overrides = {},
-          overrides = {},
-          dim_inactive = false,
-          transparent_mode = true,
+        require("catppuccin").setup({
+            background = { -- :h background
+                light = "latte",
+                dark = "mocha",
+            },
+            transparent_background = true, -- disables setting the background color.
+            float = {
+                transparent = true, -- enable transparent floating windows
+                solid = true, -- use solid styling for floating windows, see |winborder|
+            },
+            lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+                virtual_text = {
+                    errors = { "italic" },
+                    hints = { "italic" },
+                    warnings = { "italic" },
+                    information = { "italic" },
+                    ok = { "italic" },
+                },
+                underlines = {
+                    errors = { "underline" },
+                    hints = { "underline" },
+                    warnings = { "underline" },
+                    information = { "underline" },
+                    ok = { "underline" },
+                },
+                inlay_hints = {
+                    background = true,
+                },
+            },
+            custom_highlights = false,
+            default_integrations = true,
+            auto_integrations = false,
+            integrations = {
+                cmp = true,
+                gitsigns = true,
+                nvimtree = true,
+                notify = false,
+                mini = {
+                    enabled = true,
+                    indentscope_color = "",
+                },
+            },
         })
-        vim.cmd("colorscheme gruvbox")
-    end,
+
+        -- setup must be called before loading
+        vim.cmd.colorscheme "catppuccin"
+end,
   },
 }
 

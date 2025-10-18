@@ -232,5 +232,6 @@ return {
         -- lspconfig.cssls.setup({ capabilities = capabilities })
         lspconfig.clangd.setup({ capabilities = capabilities })
         lspconfig.pyright.setup({ capabilities = capabilities })
+        lspconfig.terraformls.setup({ capabilities = capabilities })
     end,
 }

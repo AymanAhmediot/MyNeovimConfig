@@ -22,6 +22,7 @@ return {
                     "typescript",
                     "tsx",
                     "go",
+                    "php",
                     "yaml",
                     "html",
                     "css",

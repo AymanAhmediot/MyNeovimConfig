@@ -47,6 +47,7 @@ return {
                 "emmet_language_server",
                 -- "eslint",
                 "marksman",
+                "terraformls",
             },
 
         })
@@ -56,9 +57,12 @@ return {
                 "prettier", -- prettier formatter
                 "stylua",   -- lua formatter
                 "isort",    -- python formatter
-                "cpplint",
-                "pylint",
+                "cpplint", -- linter for c++ 
+                "pylint", -- linter for python
                 "denols",
+                "golangci-lint", -- linter for go 
+                "goimports", -- formatter for go 
+                "terraform", -- linter for terraform
                 -- { 'eslint_d', version = '13.1.2' },
             },
 
